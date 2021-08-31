@@ -1,50 +1,41 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
+import SingleCourseJumbotron from "../../components/cards/SingleCourseJumbotron";
+import PreviewModal from "../../components/modal/PreviewModal";
+import SingleCourseLessons from "../../components/cards/SingleCourseLessons";
 
 const SingleCourse = ({ course }) => {
+  //state
+  const [showModal, setShowModal] = useState(false);
+  const [preview, setPreview] = useState("");
+
   const router = useRouter();
   const { slug } = router.query;
-  //destructure
-  const {
-    name,
-    description,
-    instructor,
-    updatedAt,
-    lessons,
-    image,
-    price,
-    paid,
-    category,
-  } = course;
+
   return (
     <>
-      <div className='container-fluid'>
-        <div className='row'>
-          <div className='jumbotron bg-primary square'>
-            <div className='row'>
-              <div className='col-md-8'>
-                {/* title */}
-                <h1 className='text-light font-weight-bold'>{name}</h1>
-                {/* description */}
-                <p className='lead'>
-                  {description && description.substring(0, 160)}...
-                </p>
-                {/* category */}
-                {/* author */}
-                {/* updatedAt */}
-                {/* price */}
-              </div>
-              <div className='col-md-4'>
-                {/* show video preview or course image */}
-                <p>Show course image</p>
-                <p>Show Enrolled button</p>
-                {/* enroll button */}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <SingleCourseJumbotron
+        course={course}
+        showModal={showModal}
+        setShowModal={setShowModal}
+        preview={preview}
+        setPreview={setPreview}
+      />
+      <PreviewModal
+        showModal={showModal}
+        setShowModal={setShowModal}
+        preview={preview}
+      />
+
+      {course.lessons && (
+        <SingleCourseLessons
+          lessons={course.lessons}
+          setPreview={setPreview}
+          showModal={showModal}
+          setShowModal={setShowModal}
+        />
+      )}
     </>
   );
 };
