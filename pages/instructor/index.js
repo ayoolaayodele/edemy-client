@@ -21,7 +21,7 @@ const InstructorIndex = () => {
   return (
     <InstructorRoute>
       <h1 className='jumbotron text-center square p-3 mt-2 left-bottom-radius'>
-        Courses
+        Instructor Dashboard
       </h1>
 
       {!courses.length && (

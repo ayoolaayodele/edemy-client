@@ -7,10 +7,10 @@ import { Context } from "../context";
 import { useRouter } from "next/router";
 
 const Login = () => {
-  const [email, setEmail] = useState("pethnar@gmail.com");
+  const [email, setEmail] = useState("peckerstripeplatform@gmail.com");
   //peckerstripeplatform@gmail.com"
   //pecker1234
-  const [password, setPassword] = useState("pethnar123");
+  const [password, setPassword] = useState("pecker123");
   const [loading, setLoading] = useState(false);
 
   //state
