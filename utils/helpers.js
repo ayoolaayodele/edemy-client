@@ -6,6 +6,7 @@ export const currencyFormatter = (data) => {
   });
 };
 
+//To display stripe balance, don't multiply by 100, its already in cents
 export const stripeCurrencyFormatter = (data) => {
   return (data.amount / 100).toLocaleString(data.currency, {
     style: "currency",
