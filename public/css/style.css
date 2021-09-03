@@ -7,11 +7,6 @@
   color: #fff;
 }
 
-.btn {
-  width: 100%;
-}
-
-.element {
-  display: flex;
-  justify-content: space-between;
+.pointer {
+  cursor: pointer;
 }
