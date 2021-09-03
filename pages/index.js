@@ -15,14 +15,9 @@ const Index = () => {
 
   return (
     <>
-      <div className='jumbotron text-center bg-primary square'>
-        <h1>Become A FullStack Web Developer</h1>
-        <hr style={{ borderBottom: "2px solid silver", width: "100px" }} />
-        <p className='lead'>
-          Master JavaScript React Node MongoDB MERN Stack & Start Building Real
-          Projects
-        </p>
-      </div>
+      <h1 className='jumbotron text-center bg-primary square'>
+        E-learning Marketplace
+      </h1>
       <div className='container-fluid'>
         <div className='row pt-2'>
           {courses.map((course) => (
